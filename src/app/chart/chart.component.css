@@ -1,0 +1,18 @@
+.users >span ,.interactions > span,.reviews>span{
+    color:green;
+    font-size: 20px;
+}
+.sessions>span {
+    font-size: 20px;
+    color: #dc3545;
+}
+.sessions {
+    border-bottom: 2px solid  #7564e5;
+
+}
+.users,.interactions,.sessions,.reviews{
+    font-size: 24px;
+}
+.text-label-color >label {
+    color:  #a8b4b8;
+}

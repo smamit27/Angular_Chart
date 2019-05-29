@@ -1,0 +1,63 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="form-group ">
+    <div class="col-xs-6 text-label-color">
+      <label for="primaryPhone">Primary Phone:</label>
+      <input class="form-controls" id="primaryPhone" formControlName="primaryPhone" type="number" [ngClass]="{ 'is-invalid': submitted && f.primaryPhone.errors }">
+      <span *ngIf="submitted && f.primaryPhone.errors" class="invalid-feedback">
+        <span *ngIf="f.primaryPhone.errors.required">Primary Phone is required</span>
+      </span>
+    </div>
+    <div class="col-xs-6 text-label-color">
+      <label for="cellPhone">Cell Phone:</label>
+      <input class="form-controls" id="cellPhone" formControlName="cellPhone" type="number" [ngClass]="{ 'is-invalid': submitted && f.cellPhone.errors }">
+      <span *ngIf="submitted && f.cellPhone.errors" class="invalid-feedback">
+        <span *ngIf="f.cellPhone.errors.required">Cell Phone is required</span>
+      </span>
+    </div>
+  </div>
+  <div class="form-group top-buffer">
+    <div class="col-xs-6 text-label-color">
+      <label for="emailAddress">Email Address:</label>
+      <input class="form-controls" id="emailAddress" formControlName="emailAddress" type="text" [ngClass]="{ 'is-invalid': submitted && f.emailAddress.errors }">
+      <span *ngIf="submitted && f.emailAddress.errors" class="invalid-feedback">
+        <span *ngIf="f.emailAddress.errors.required">Email Address is required</span>
+        <span *ngIf="f.emailAddress.errors.email">Email must be a valid email address</span>
+      </span>
+    </div>
+    <div class="col-xs-6 text-label-color">
+      <label for="confirmEmailAddress">Confirm Email Address:</label>
+      <input class="form-controls" id="confirmEmailAddress" formControlName="confirmEmailAddress" type="text" [ngClass]="{ 'is-invalid': submitted && f.confirmEmailAddress.errors }">
+      <span *ngIf="submitted && f.confirmEmailAddress.errors" class="invalid-feedback">
+        <span *ngIf="f.confirmEmailAddress.errors.required">Confirm Email Address is required</span>
+      </span>
+    </div>
+  </div>
+  <div class="form-group top-buffer">
+    <div class="col-xs-6 text-label-color">
+      <label for="preferredContact">Preferred Method Of Contact:</label>
+
+      <select class="form-controls input-sm" formControlName="preferredContact" id="preferredContact" [ngClass]="{ 'is-invalid': submitted && f.preferredContact.errors }">
+        <option>Primary Phone</option>
+        <option>Cell Phone</option>
+      </select>
+      <span *ngIf="submitted && f.preferredContact.errors" class="invalid-feedback">
+        <span *ngIf="f.preferredContact.errors.required">Preferred Method Of Contact is required</span>
+      </span>
+    </div>
+    <div class="col-xs-6 text-label-color">
+      <label for="bestTimeContact">Best Time To Contact:</label>
+
+      <select class="form-controls input-sm" formControlName="bestTimeContact" id="bestTimeContact" [ngClass]="{ 'is-invalid': submitted && f.bestTimeContact.errors }">
+        <option>Any</option>
+      </select>
+      <span *ngIf="submitted && f.bestTimeContact.errors" class="invalid-feedback">
+        <span *ngIf="f.bestTimeContact.errors.required">Best Time To Contact is required</span>
+      </span>
+    </div>
+  </div>
+  <div class="text-button-align">
+    <button type="submit" class="btn btn-purple">Next
+      <i class="fa fa-arrow-right fa-fw"></i>
+    </button>
+  </div>
+</form>
